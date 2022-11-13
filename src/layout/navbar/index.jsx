@@ -1,8 +1,11 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Button from "../../components/Button";
+import { Link, Outlet } from "react-router-dom";
 import { Container, Href, Icon } from "../../global/global";
+import Footer from "../footer";
+import nav_data from "../../mock/navbar";
+import { Wrapper } from "../main/style";
 
 import {
   Header__top,
@@ -23,13 +26,13 @@ const Navbar = () => {
         <Container>
           <Header__top__group>
             <Header__logo>
-              <a href="">
+              <Link to="/home">
                 <img
                   src="https://asaxiy.uz/custom-assets/images/logos/asaxiy-logo.svg
 "
                   alt="logo img"
                 />
-              </a>
+              </Link>
             </Header__logo>
             <Header__search>
               <form>
@@ -106,33 +109,30 @@ const Navbar = () => {
       <Header__bottom>
         <Container>
           <Header__bottom__group>
-            <Href href="">
+            <Link>
               <Icon>
                 <GiHamburgerMenu />
               </Icon>
               <span> Все категории</span>
-            </Href>
-            <Href href="">
-              <Button>11.11</Button>
-            </Href>
-            <Href href="">
-              <span>Новости</span>
-            </Href>
-            <Href href="">
-              <span>Новинки</span>
-            </Href>
-            <Href href="">
-              <span>Скидки</span>
-            </Href>
-            <Href href="">
-              <span>Книги</span>
-            </Href>
-            <Href href="">
-              <span>Телефоны и гаджеты</span>
-            </Href>
+            </Link>
+            {nav_data.map(({ item, path, index }) => {
+              return (
+                <div key={index}>
+                  <Link to={path}>
+                    <span>{item}</span>
+                  </Link>
+                </div>
+              );
+            })}
           </Header__bottom__group>
         </Container>
       </Header__bottom>
+      <Wrapper>
+        <Container>
+          <Outlet />
+        </Container>
+      </Wrapper>
+      <Footer />
     </header>
   );
 };

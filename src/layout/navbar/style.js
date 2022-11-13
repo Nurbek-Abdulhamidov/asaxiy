@@ -51,6 +51,12 @@ export const Header__bottom__group = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+  }
 `;
 
 export const Header__logo = styled.div`
