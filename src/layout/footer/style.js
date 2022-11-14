@@ -154,11 +154,3 @@ export const Footer__Bottom = styled.div`
   }
 `;
 
-export const Menu = styled.div`
-  position: absolute;
-  right: 0;
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  background-color: red;
-  width: 200px;
-  transition: all 0.3s ease;
-`;

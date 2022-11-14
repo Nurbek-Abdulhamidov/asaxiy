@@ -1,6 +1,9 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
+import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { BsExclamationCircleFill } from "react-icons/bs";
+import { FaNewspaper } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import { Container, Icon } from "../../global/global";
 import Footer from "../footer";
@@ -17,18 +20,18 @@ import {
   Header__top_list,
   CountDiv,
   Count,
+  Menu_Header,
+  Menu,
+  Sidebar_Content,
 } from "./style";
 import { useState } from "react";
-import { Menu } from "../footer/style";
 
 const Navbar = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-
   const handleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
   };
-
 
   return (
     <header>
@@ -118,7 +121,61 @@ const Navbar = () => {
             </Icon>
           </Header__top__group>
         </Container>
-        <Menu isOpen={hamburgerOpen}>Hello</Menu>
+        <Menu isOpen={hamburgerOpen}>
+          <Menu_Header>
+            <img
+              src="	https://asaxiy.uz/custom-assets/images/logos/asaxiy-logo.svg"
+              alt=""
+            />
+            <Icon visible onClick={handleHamburger}>
+              <MdClose />
+            </Icon>
+          </Menu_Header>
+          <Sidebar_Content>
+            <ul>
+              <li>
+                <img
+                  src="https://asaxiy.uz/custom-assets/images/icons/header/payment.svg"
+                  alt=""
+                />
+                Оплатить
+              </li>
+              <li>
+                <img
+                  src="	https://asaxiy.uz/custom-assets/images/icons/header/tracker.svg"
+                  alt=""
+                />
+                Отследить заказ
+              </li>
+              <li>
+                <img
+                  src="https://asaxiy.uz/custom-assets/images/icons/header/heart.svg"
+                  alt=""
+                />
+                Избранное
+              </li>
+              <li>
+                <img
+                  src="	https://asaxiy.uz/custom-assets/images/icons/header/icons8-new-product.svg"
+                  alt=""
+                />
+                Новинки
+              </li>
+              <li>
+                <i>
+                  <FaNewspaper />
+                </i>
+                Новости
+              </li>
+              <li>
+                <i>
+                  <BsExclamationCircleFill />
+                </i>
+                О нас
+              </li>
+            </ul>
+          </Sidebar_Content>
+        </Menu>
       </Header__top>
       <Header__bottom>
         <Container>

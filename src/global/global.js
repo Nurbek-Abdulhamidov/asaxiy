@@ -4,6 +4,8 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1440px;
   padding: 0 15px;
+
+
 `;
 
 export const Href = styled.a`
@@ -29,5 +31,6 @@ export const Icon = styled.i`
     padding-top: 5px;
     color: #008dff;
     cursor: pointer;
+    font-size: 28px;
   }
 `;

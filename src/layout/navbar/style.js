@@ -158,3 +158,48 @@ export const Header__top_list = styled.div`
     }
   }
 `;
+
+export const Menu = styled.div`
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  width: 65%;
+  height: 100%;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  padding: 0 20px;
+`;
+
+export const Menu_Header = styled.div`
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+`;
+
+export const Sidebar_Content = styled.div`
+  ul {
+    text-align: left;
+    padding: 0 10px;
+  }
+  li {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 10px;
+    cursor: pointer;
+    color: rgba(20, 24, 33, 0.7);
+
+    :hover {
+      background-color: #8080804d;
+      color: #000;
+      border-radius: 10px;
+    }
+  }
+  img {
+    height: 24px;
+  }
+`;
