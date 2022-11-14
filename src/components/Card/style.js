@@ -7,9 +7,11 @@ export const CardWrapper = styled.div`
   outline: 0;
   transition: all 0.2s ease;
   border-radius: 20px;
-  height: 100%;
   max-width: 289px;
-  min-width: 200px;
+  min-width: 130px;
+  height: 100%;
+  max-height: 410px;
+  min-height: 330px;
   box-shadow: 0px 10px 30px rgb(209 213 223 / 50%);
 
   :hover a {
@@ -34,7 +36,7 @@ export const Heart = styled.div`
   top: 50px;
   right: 17px;
   font-size: 26px;
-  color: #c9cdd6;
+  color: ${({ isLike }) => (isLike ? "red" : "#c9cdd6")};
   padding: 4px 8px;
   cursor: pointer;
 `;

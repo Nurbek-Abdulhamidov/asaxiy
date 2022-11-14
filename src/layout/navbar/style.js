@@ -45,12 +45,21 @@ export const Header__top__group = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 880px) {
+    display: flex;
+  }
 `;
 
 export const Header__bottom__group = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 880px) {
+    display: none;
+  }
+
   a {
     display: flex;
     align-items: center;
@@ -61,9 +70,15 @@ export const Header__bottom__group = styled.div`
 
 export const Header__logo = styled.div`
   margin-right: 20px;
+  @media (max-width: 880px) {
+  }
 `;
 
 export const Header__search = styled.div`
+  @media (max-width: 880px) {
+    display: ${({ hidden }) => (hidden ? "block" : "none")};
+  }
+
   flex: 3;
   form {
     width: calc(100% - 1.5rem);
@@ -113,7 +128,13 @@ export const Header__search = styled.div`
 export const Header__top_list = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   flex: 2;
+
+  @media (max-width: 880px) {
+    display: none;
+  }
+
   a {
     display: flex;
     flex-direction: column;

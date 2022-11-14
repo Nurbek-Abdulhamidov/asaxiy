@@ -5,7 +5,7 @@ export const Aside = styled.aside`
   height: 100%;
   padding: 15px;
   max-width: 289px;
-  min-width: 215px;
+  min-width: 130px;
   box-shadow: 0 10px 30px rgb(209 213 223 / 50%);
   background-color: #fff;
   padding-top: 20px;

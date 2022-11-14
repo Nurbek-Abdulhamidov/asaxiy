@@ -2,7 +2,7 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, Outlet } from "react-router-dom";
-import { Container, Href, Icon } from "../../global/global";
+import { Container, Icon } from "../../global/global";
 import Footer from "../footer";
 import nav_data from "../../mock/navbar";
 import { Wrapper } from "../main/style";
@@ -18,8 +18,18 @@ import {
   CountDiv,
   Count,
 } from "./style";
+import { useState } from "react";
+import { Menu } from "../footer/style";
 
 const Navbar = () => {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+
+  const handleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen);
+  };
+
+
   return (
     <header>
       <Header__top>
@@ -103,8 +113,12 @@ const Navbar = () => {
                 <span>Кабинет</span>
               </a>
             </Header__top_list>
+            <Icon visible onClick={handleHamburger}>
+              <GiHamburgerMenu />
+            </Icon>
           </Header__top__group>
         </Container>
+        <Menu isOpen={hamburgerOpen}>Hello</Menu>
       </Header__top>
       <Header__bottom>
         <Container>
@@ -115,7 +129,7 @@ const Navbar = () => {
               </Icon>
               <span> Все категории</span>
             </Link>
-            {nav_data.map(({ item, path, index }) => {
+            {nav_data.map(({ item, path }, index) => {
               return (
                 <div key={index}>
                   <Link to={path}>
@@ -125,8 +139,20 @@ const Navbar = () => {
               );
             })}
           </Header__bottom__group>
+          <Header__search hidden>
+            <form>
+              <input type="text" placeholder="Поиск..." />
+              <button>
+                <i>
+                  <BiSearch />
+                </i>
+                <span style={{ color: "#fff" }}>Искать</span>
+              </button>
+            </form>
+          </Header__search>
         </Container>
       </Header__bottom>
+
       <Wrapper>
         <Container>
           <Outlet />

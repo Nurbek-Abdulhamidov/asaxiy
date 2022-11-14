@@ -27,6 +27,7 @@ export const Features_List = styled.div`
 
   @media (max-width: 600px) {
     grid-template-columns: auto;
+    padding: 5px 15px;
   }
 `;
 
@@ -91,6 +92,10 @@ export const Row = styled.div`
   display: flex;
   gap: 20px;
   width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const RowMd = styled.div`
@@ -99,6 +104,10 @@ export const RowMd = styled.div`
   gap: 20px;
   width: 100%;
 
+  @media (max-width: 600px) {
+    justify-content: inherit;
+    flex-direction: column;
+  }
   img {
     height: 24px;
   }
@@ -119,6 +128,11 @@ export const ColumnMd = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 30px;
+  }
 `;
 
 export const Footer__Bottom = styled.div`
@@ -138,4 +152,13 @@ export const Footer__Bottom = styled.div`
     line-height: 20px;
     text-align: center;
   }
+`;
+
+export const Menu = styled.div`
+  position: absolute;
+  right: 0;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  background-color: red;
+  width: 200px;
+  transition: all 0.3s ease;
 `;

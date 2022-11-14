@@ -21,8 +21,13 @@ export const Href = styled.a`
 `;
 
 export const Icon = styled.i`
+  display: ${({ visible }) => (visible ? "none" : "block")};
+  @media (max-width: 880px) {
+    display: ${({ visible }) => (visible ? "block" : "none")};
+  }
   svg {
     padding-top: 5px;
     color: #008dff;
+    cursor: pointer;
   }
 `;
